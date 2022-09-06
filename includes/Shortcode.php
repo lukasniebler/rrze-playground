@@ -9,8 +9,10 @@ class Shortcode
     public function __construct()
     {
         add_shortcode('rrze-playground', [$this, 'shortcode']);
+        //add_shortcode('rrze-playground', array($this, 'shortcode');
     }
 
+    //[rrze-playground]
     public function shortcode($atts, $content = null, $tag = '')
     {
         /**
@@ -47,12 +49,12 @@ class Shortcode
     public function registerStyles()
     {
         wp_register_style(
-            'rrze-playground',
+            'rrze-playground-css',
             plugins_url('assets/css/style.css', RRZE_PLAYGROUND_FILE),
             [],
             '0.0.1',
             'all'
         );
-        wp_enqueue_style('rrze-playground');
+        wp_enqueue_style('rrze-playground-css');
     }
 }
